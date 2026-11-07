@@ -14,7 +14,47 @@
 .caret { display: inline-block; width: 3px; height: 1em; margin-left: 4px; background: var(--accent); vertical-align: -.12em; animation: blink 1s steps(1) infinite; }
 @keyframes blink { 50% { opacity: 0; } }
 .intro { max-width: 620px; margin: 0 auto 2rem; color: var(--muted); }
-.cta { display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap; }
+.cta { display: flex; gap: 1.4rem; justify-content: center; flex-wrap: wrap; }
 .socials { display: flex; gap: .9rem; justify-content: center; margin-top: 2.2rem; }
 .socials a { width: 46px; height: 46px; display: grid; place-items: center; border-radius: 50%; border: 1px solid var(--border); transition: .3s var(--ease); }
 .socials a:hover { background: var(--grad-btn); color: #fff; transform: translateY(-5px); border-color: transparent; }
+
+/* ---------- Hero buttons (Amit jaisa 3D press effect) ---------- */
+.cta .btn-wa,
+.cta .btn-cv {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .6rem;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  border: 0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+
+/* Green WhatsApp */
+.cta .btn-wa { background: #22c55e; box-shadow: 0 6px 0 #15803d; }
+.cta .btn-wa:hover { transform: translateY(-3px); box-shadow: 0 9px 0 #15803d, 0 14px 26px rgba(34, 197, 94, .35); }
+
+/* Blue Resume */
+.cta .btn-cv { background: #00b4ff; box-shadow: 0 6px 0 #5b21b6; }
+.cta .btn-cv:hover { transform: translateY(-3px); box-shadow: 0 9px 0 #5b21b6, 0 14px 26px rgba(0, 180, 255, .35); }
+
+/* Dabane pe button neeche dhans jata hai */
+.cta .btn-wa:active,
+.cta .btn-cv:active { transform: translateY(5px); box-shadow: 0 1px 0 rgba(0, 0, 0, .4); }
+
+/* Icon halka hilta hai hover pe */
+.cta .btn-wa:hover svg,
+.cta .btn-cv:hover svg { animation: wiggle .5s ease; }
+@keyframes wiggle { 25% { transform: rotate(-12deg); } 75% { transform: rotate(12deg); } }
+
+@media (max-width: 480px) {
+  .cta { gap: 1.1rem; }
+  .cta .btn-wa, .cta .btn-cv { width: 100%; max-width: 260px; }
+}

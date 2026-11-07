@@ -33,8 +33,12 @@ export default function Hero() {
         <p className="role grad-text" aria-live="polite">{typed}<i className="caret" /></p>
         <p className="intro">{profile.intro}</p>
         <div className="cta">
-          <a href="#projects" className="btn btn-green">View Projects</a>
-          <a href={profile.resume} download className="btn btn-blue"><Icon name="download" /> Download CV</a>
+          <a href={profile.whatsapp} target="_blank" rel="noreferrer" className="btn btn-wa">
+            <Icon name="whatsapp" /> Let's Chat
+          </a>
+          <a href={profile.resume} download="PayalGupta_FullStack_Developer_Resume.pdf" className="btn btn-cv">
+            <Icon name="download" /> Resume
+          </a>
         </div>
         <div className="socials">
           <a href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub"><Icon name="github" /></a>
